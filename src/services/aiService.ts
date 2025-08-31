@@ -40,21 +40,22 @@ export async function generateNextQuestion(payload: NextQuestionPayload & { exis
   // STOP if max questions reached
   
 
-  const prompt = previousAnswer
-    ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** that helps gather more insights about the product. If no more questions are needed, return "DONE".
+const prompt = previousAnswer
+  ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** that helps uncover transparent and verifiable information about the product. Focus on details such as ingredients, sourcing, certifications, sustainability, claims, or safety. If no more questions are needed, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
 Description: ${description}
 
-Return only the question text, no numbering or extra explanation.`
-    : `Generate the first professional, context-aware follow-up question for this product. If no more questions are needed, return "DONE".
+Return only the question text. Do not add numbering, explanations, or filler text.`
+  : `Generate the first professional, context-aware follow-up question that gathers transparent and verifiable information about this product. Focus on details such as ingredients, sourcing, certifications, sustainability, claims, or safety. If no questions are needed, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
 Description: ${description}
 
-Return only the question text, no numbering or extra explanation.`;
+Return only the question text. Do not add numbering, explanations, or filler text.`;
+
 
   try {
     const model = genAI.getGenerativeModel({
