@@ -13,7 +13,7 @@ import productRoutes from './routes/productRoutes';
 const app = express();
 
 app.use(cors({
-  origin: "https://form-frontend-ochre.vercel.app/",
+  origin: "https://form-frontend-ochre.vercel.app",
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   allowedHeaders: ["Content-Type", "Authorization"],
 }));
