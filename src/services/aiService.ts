@@ -41,20 +41,21 @@ export async function generateNextQuestion(payload: NextQuestionPayload & { exis
   
 
 const prompt = previousAnswer
-  ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** that helps uncover transparent and verifiable information about the product. Focus on details such as ingredients, sourcing, certifications, sustainability, claims, or safety. If no more questions are needed, return "DONE".
+  ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** to gather transparent and verifiable details about the product. Focus on areas such as origin, sourcing, ingredients/materials, certifications, sustainability, safety, or authenticity. If no further questions are relevant, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
 Description: ${description}
 
-Return only the question text. Do not add numbering, explanations, or filler text.`
-  : `Generate the first professional, context-aware follow-up question that gathers transparent and verifiable information about this product. Focus on details such as ingredients, sourcing, certifications, sustainability, claims, or safety. If no questions are needed, return "DONE".
+Return only the question text — no numbering, explanations, or extra text.`
+  : `Generate the first professional, context-aware follow-up question to gather transparent and verifiable details about this product. Focus on areas such as origin, sourcing, ingredients/materials, certifications, sustainability, safety, or authenticity. If no questions are relevant, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
 Description: ${description}
 
-Return only the question text. Do not add numbering, explanations, or filler text.`;
+Return only the question text — no numbering, explanations, or extra text.`;
+
 
 
   try {
