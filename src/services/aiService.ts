@@ -41,14 +41,14 @@ export async function generateNextQuestion(payload: NextQuestionPayload & { exis
   
 
 const prompt = previousAnswer
-  ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** to gather transparent and verifiable details about the product. Focus on areas such as origin, sourcing, ingredients/materials, certifications, sustainability, safety, or authenticity. If no further questions are relevant, return "DONE".
+  ? `Based on the previous answer: "${previousAnswer}", generate **one concise, professional follow-up question** that helps uncover transparent and verifiable details about the product. Focus on aspects such as health benefits, organic or natural qualities, certifications, sustainability practices, authenticity, or uniqueness that could influence labeling (Platinum, Gold, Green). If no more questions are relevant, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
 Description: ${description}
 
 Return only the question text — no numbering, explanations, or extra text.`
-  : `Generate the first professional, context-aware follow-up question to gather transparent and verifiable details about this product. Focus on areas such as origin, sourcing, ingredients/materials, certifications, sustainability, safety, or authenticity. If no questions are relevant, return "DONE".
+  : `Generate the first professional, context-aware follow-up question that helps uncover transparent and verifiable details about the product. Focus on aspects such as health benefits, organic or natural qualities, certifications, sustainability practices, authenticity, or uniqueness that could influence labeling (Platinum, Gold, Green). If no questions are relevant, return "DONE".
 
 Product Name: ${name}
 Category: ${category}
